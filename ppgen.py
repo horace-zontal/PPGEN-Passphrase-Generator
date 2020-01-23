@@ -17,8 +17,6 @@ class hzapp(tk.Tk):
         self.text.pack()
         sys.stdout = TextRedirector(self.text, "stdout")
         
-
-    
     def print_stdout(self):
         print ' '.join(random.sample(words, 7)) #random.sample unique elements/no repeats
 
