@@ -9,16 +9,31 @@ class hzapp(tk.Tk):
         tk.Tk.__init__(self)
         toolbar = tk.Frame(self)
         toolbar.pack(side="top")
-        b1 = tk.Button(self, text="GENERATE", height=2, width=10, relief ='flat', bg ='white', command=self.print_stdout)
-        b1.pack(in_=toolbar, side="left")
-        b2 = tk.Button(self, text="QUIT", height=2, width=10, relief ='flat', bg ='white', command=quit)
-        b2.pack(in_=toolbar, side="right")
+        b9 = tk.Button(self, text="9", height=2, width=10, relief ='flat', bg ='white', command=self.print_stdout9)
+        b9.pack(in_=toolbar, side="left")
+        b8 = tk.Button(self, text="8", height=2, width=10, relief ='flat', bg ='white', command=self.print_stdout8)
+        b8.pack(in_=toolbar, side="left")
+        b7 = tk.Button(self, text="7", height=2, width=10, relief ='flat', bg ='white', command=self.print_stdout7)
+        b7.pack(in_=toolbar, side="left")
+        b6 = tk.Button(self, text="6", height=2, width=10, relief ='flat', bg ='white', command=self.print_stdout6)
+        b6.pack(in_=toolbar, side="left")
+        bq = tk.Button(self, text="QUIT", height=2, width=10, relief ='flat', bg ='white', command=quit)
+        bq.pack(in_=toolbar, side="right")
         self.text = tk.Text()
         self.text.pack()
         sys.stdout = TextRedirector(self.text, "stdout")
-        
-    def print_stdout(self):
+
+    def print_stdout9(self):
+        print ' '.join(random.sample(words, 9)) #random.sample unique elements/no repeats
+
+    def print_stdout8(self):
+        print ' '.join(random.sample(words, 8)) #random.sample unique elements/no repeats
+
+    def print_stdout7(self):
         print ' '.join(random.sample(words, 7)) #random.sample unique elements/no repeats
+
+    def print_stdout6(self):
+        print ' '.join(random.sample(words, 6)) #random.sample unique elements/no repeats
 
 class TextRedirector(object):
     def __init__(self, widget, tag="stdout"):
@@ -29,7 +44,7 @@ class TextRedirector(object):
         self.widget.configure(state="normal")
         self.widget.insert("end", str, (self.tag,))
         self.widget.configure(state="normal")
-        
+
 app = hzapp()
 app.mainloop()
 quit()
