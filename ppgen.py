@@ -27,13 +27,13 @@ class hzapp(tk.Tk):
         print ' '.join(random.sample(words, 9)) #random.sample unique elements/no repeats
 
     def print_stdout8(self):
-        print ' '.join(random.sample(words, 8)) #random.sample unique elements/no repeats
+        print ' '.join(random.sample(words, 8))
 
     def print_stdout7(self):
-        print ' '.join(random.sample(words, 7)) #random.sample unique elements/no repeats
+        print ' '.join(random.sample(words, 7))
 
     def print_stdout6(self):
-        print ' '.join(random.sample(words, 6)) #random.sample unique elements/no repeats
+        print ' '.join(random.sample(words, 6))
 
 class TextRedirector(object):
     def __init__(self, widget, tag="stdout"):
